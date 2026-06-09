@@ -1,0 +1,388 @@
+﻿/* ==========================================================================
+   Global Resets and Configuration
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f6f8;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ==========================================================================
+   Navigation Header (Sticky Layout)
+   ========================================================================== */
+header {
+    background: #0f2027; /* Dark elegant deep blue hue */
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo-accent {
+    color: #2ec4b6; /* Brand bright teal green accents */
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+    nav a:hover {
+        color: #2ec4b6;
+    }
+
+/* ==========================================================================
+   Hero Landing Showcase
+   ========================================================================== */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content {
+    background: rgba(15, 32, 39, 0.75); /* Soft premium blur overlay */
+    padding: 50px 40px;
+    border-radius: 16px;
+    max-width: 800px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    color: #f0f0f0;
+}
+
+.btn {
+    background: #2ec4b6;
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(46, 196, 182, 0.4);
+}
+
+    .btn:hover {
+        background: #20a396;
+        transform: translateY(-2px);
+    }
+
+/* ==========================================================================
+   Section Layout Formats
+   ========================================================================== */
+.section {
+    padding: 90px 0;
+}
+
+.bg-white {
+    background: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #0f2027;
+    position: relative;
+    font-weight: 700;
+}
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #2ec4b6;
+        margin: 12px auto 0 auto;
+        border-radius: 2px;
+    }
+
+    .section-title.left-align::after {
+        margin: 12px 0 0 0;
+    }
+
+.section-subtitle {
+    display: block;
+    color: #2ec4b6;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   About Section Styling (Mural Grid)
+   ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    object-fit: cover;
+    height: 380px;
+}
+
+/* ==========================================================================
+   Amenities Grid Elements
+   ========================================================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+    border-top: 4px solid transparent;
+}
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        border-top-color: #2ec4b6;
+    }
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    color: #0f2027;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ==========================================================================
+   Accommodation Cards Layout
+   ========================================================================== */
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 35px;
+}
+
+.room-card {
+    background: #f4f6f8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+}
+
+    .room-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+.room-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+    .room-info h3 {
+        font-size: 22px;
+        color: #0f2027;
+        margin-bottom: 10px;
+    }
+
+    .room-info p {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+.room-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+    .room-footer .price {
+        font-size: 18px;
+        font-weight: 700;
+        color: #2ec4b6;
+    }
+
+/* ==========================================================================
+   Photo Grid Portfolio
+   ========================================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    height: 240px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.08);
+    }
+
+/* ==========================================================================
+   Location Contact Layout
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-details h3 {
+    font-size: 24px;
+    color: #0f2027;
+    margin-bottom: 15px;
+}
+
+.contact-details p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-meta-item {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-map {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Footer Component
+   ========================================================================== */
+footer {
+    background: #0f2027;
+    color: #999;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+    border-top: 1px solid #1f363d;
+}
+
+/* ==========================================================================
+   Responsive View Breakpoints
+   ========================================================================== */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image img {
+        height: 265px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+}
